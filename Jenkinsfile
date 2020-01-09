@@ -11,7 +11,7 @@ pipeline
         PROJECT = 'tap_sample'
         IMAGE = 'tap_sample:latest'
         ECRURL = '012729077706.dkr.ecr.us-east-2.amazonaws.com/anthosimagereg'
-        ECRCRED = 'ecr:us-east-2:tap_ecr'
+        ECRCRED = 'ecr:us-east-2:anthos-user'
     }
     stages
     {
@@ -39,7 +39,7 @@ pipeline
                 script
                 {
                     // Build the docker image using a Dockerfile
-                    docker.build("$IMAGE","examples/pipelines/TAP_docker_image_build_push_ecr")
+                    docker.build("$IMAGE")
                 }
             }
         }
